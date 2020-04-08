@@ -7,8 +7,8 @@ using namespace std;
 
 
 int main() {
-    Store s;
-    Book b1, b2, b3;
+    Store  s;
+    Book  b1, b2, b3;
     b1.SetID(1);
     b1.SetName("C++  语言程序设计(第4版)");
     b1.SetAuthor("郑莉");
@@ -36,8 +36,9 @@ int main() {
     s.in(b3);
     cout << "现有库存书籍数量：" << s.GetCount() << endl;
     cout << "查找并出库图书：离散数学" << endl;
-    Book tmpbook = s.findbyName("离散数学");
-    if (tmpbook.GetID() != 0) {
+    Book  tmpbook = s.findbyName("离散数学");
+    if (tmpbook.GetID() != 0)
+    {
         s.out("离散数学");
         cout << "离散数学  已成功出库" << endl;
     }
@@ -62,5 +63,5 @@ int main() {
     cout << "输出所有库存图书的信息" << endl;
     s.printList();
     cout << "程序运行结束" << endl;
-    return 0;
+    return  0;
 }

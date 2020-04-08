@@ -1,5 +1,8 @@
 ﻿  Book.cpp
   Library11.cpp
   Store.cpp
+C:\Users\Rimo\Code\Rimo\Library11\Store.cpp(46,17): warning C4101: “j”: 未引用的局部变量
+C:\Users\Rimo\Code\Rimo\Library11\Store.cpp(63,15): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Rimo\Code\Rimo\Library11\Store.cpp(82,15): warning C4101: “i”: 未引用的局部变量
   正在生成代码...
   Library11.vcxproj -> C:\Users\Rimo\Code\Rimo\Library11\Debug\Library11.exe
