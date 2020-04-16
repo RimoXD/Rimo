@@ -1,7 +1,7 @@
 #include "Circle.h"
 #include<iostream>
 using namespace std;
-int pi = 3.14;
+float pi = 3.14;
 
 Circle::Circle(int r, int ID):Shape(ID),R(r)
 {
@@ -29,7 +29,7 @@ void Circle::set(int ID, int r)
 	R = r;
 }
 
-int Circle::getArea()
+float Circle::getArea()
 {
 	return R*R*pi;
 }

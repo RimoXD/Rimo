@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Rimo/Code/Rimo/Library11/Book.h
+string
+-
+
+C:/Users/Rimo/Code/Rimo/Library11/Library11.cpp
+iostream
+-
+string
+-
+Book.h
+C:/Users/Rimo/Code/Rimo/Library11/Book.h
+Store.h
+C:/Users/Rimo/Code/Rimo/Library11/Store.h
+
+C:/Users/Rimo/Code/Rimo/Library11/Store.h
+iostream
+-
+vector
+-
+Book.h
+C:/Users/Rimo/Code/Rimo/Library11/Book.h
+

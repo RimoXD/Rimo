@@ -10,7 +10,7 @@ public:
 	int getR();
 	int getID();
 	void set(int ID,int r);
-	int getArea();
+	float getArea();
 };
 
 /*Circle类从shape类继承，并派生以下成员
