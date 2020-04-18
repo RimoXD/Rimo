@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>image/u=4197336304,3349585239&amp;fm=26&amp;gp=0.jpg</file>
+        <file>image/开始.png</file>
+        <file>image/背景板.jpg</file>
+        <file>image/他乡.png</file>
+        <file>image/zzpic14836.jpg</file>
+        <file>image/timg (1).jfif</file>
+        <file>image/无标题.jpg</file>
+    </qresource>
+</RCC>
