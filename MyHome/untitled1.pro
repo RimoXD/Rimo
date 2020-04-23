@@ -44,3 +44,6 @@ FORMS    += widget.ui \
 
 RESOURCES += \
     res.qrc
+
+
+RC_FILE +=tubiao.rc
