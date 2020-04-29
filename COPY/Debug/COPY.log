@@ -1,0 +1,5 @@
+﻿  COPY.cpp
+C:\Users\Rimo\Code\copy\COPY\COPY.cpp(18,41): warning C4244: “参数”: 从“std::streamoff”转换到“const unsigned int”，可能丢失数据
+C:\Users\Rimo\Code\copy\COPY\COPY.cpp(12,11): warning C4101: “a”: 未引用的局部变量
+C:\Users\Rimo\Code\copy\COPY\COPY.cpp(12,13): warning C4101: “b”: 未引用的局部变量
+  COPY.vcxproj -> C:\Users\Rimo\Code\copy\COPY\Debug\COPY.exe
