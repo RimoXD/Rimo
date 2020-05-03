@@ -158,6 +158,7 @@ ui1::ui1(QWidget *parent) :
     ui->groupBoxshangye->setStyleSheet("QGroupBox{border:none}");
     ui->groupBoxhunhebenxi->setStyleSheet("QGroupBox{border:none}");
     ui->groupBoxhunhebenjin->setStyleSheet("QGroupBox{border:none}");
+
 }
 
 ui1::~ui1()
