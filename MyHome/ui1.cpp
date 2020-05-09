@@ -6,17 +6,23 @@
 #include <QString>
 #include <QRegExp>
 #include <qmath.h>
+#include "BigInt_multiply.h"
+
 ui1::ui1(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ui1)
 {
     ui->setupUi(this);
     setWindowTitle("MyHome");
+
+    //隐藏盒子
+    {
     ui->groupBoxhunhe->hide();
     ui->groupBoxbenxi->hide();
     ui->groupBoxbenjin->hide();
     ui->groupBoxhunhebenxi->hide();
     ui->groupBoxhunhebenjin->hide();
+    }
 
     //选择商代公积金，与混合贷两个界面分离
     {
@@ -71,8 +77,11 @@ ui1::ui1(QWidget *parent) :
 
     //设置正则表达式，限制行编辑只能输入数字
     {
-    QRegExp regExp("^[0-9]*[1-9][0-9]*$");//限制正整数
-    QRegExp regExp1("^[0-9]+(.[0-9]{2})?$");//限制两位小数
+
+    line3->setValidator(new QIntValidator(0, 10, this));
+
+    QRegExp regExp("^[1-9]*[1-9][0-9]*$");//限制正整数
+    QRegExp regExp1("^[0-9]\\.([0-9]{2})?$");//限制两位小数
     line1->setValidator(new QRegExpValidator(regExp,line1));
     line2->setValidator(new QRegExpValidator(regExp,line2));
     line3->setValidator(new QRegExpValidator(regExp1,line3));
@@ -100,11 +109,13 @@ ui1::ui1(QWidget *parent) :
     }
 
     //敬请期待
+    {
     connect(cb2, QOverload<int>::of(&QComboBox::currentIndexChanged),
           [=](){
         if(cb2->currentIndex())
             cb2->setCurrentIndex(0);
     });
+    }
 
     //返回主界面信号机制
     {
@@ -135,6 +146,7 @@ ui1::ui1(QWidget *parent) :
     }
 
     //点击确定，传递参数
+    {
     connect(pb1,&QPushButton::clicked,[=](){
         Linetomath();
         jisuan(Chengshu(),Nianshu(),danjia,mianji,lilv,hkfangshi1);
@@ -143,22 +155,30 @@ ui1::ui1(QWidget *parent) :
         Linetomath();
         jisuan2(Nianshu(),sdje,sdll,gjjje,gjjll,hkfangshi2);
     });
+    }
 
     //点击清除，清空界面
+    {
     connect(pb2,&QPushButton::clicked,[=](){
-        Qingchu();
+        woyao.exec();
     });
     connect(pb22,&QPushButton::clicked,[=](){
+        woyao.exec();
+    });
+    connect(&woyao,&Qingccc::qingccc,[=](){
         Qingchu();
     });
+    }
 
+    //消除盒子边框
+    {
     ui->groupBoxbenxi->setStyleSheet("QGroupBox{border:none}");
     ui->groupBoxhunhe->setStyleSheet("QGroupBox{border:none}");
     ui->groupBoxbenjin->setStyleSheet("QGroupBox{border:none}");
     ui->groupBoxshangye->setStyleSheet("QGroupBox{border:none}");
     ui->groupBoxhunhebenxi->setStyleSheet("QGroupBox{border:none}");
     ui->groupBoxhunhebenjin->setStyleSheet("QGroupBox{border:none}");
-
+    }
 }
 
 ui1::~ui1()
@@ -166,49 +186,62 @@ ui1::~ui1()
     delete ui;
 }
 
+//商代和公积金贷款算法
 void ui1::jisuan(double chengshu,int nianshu,int danjia,int mianji,double lilv,int hkfangshi)
 {
-    float shoufu,yuegong,dkze,lixi,hkze,yueshu;
-    int zj;
+
+    qDebug()<<mianji;
+
+//    long long shoufu,yuegong,dkze,zj,hkze,yueshu,lixi;
+    QVector<int> ZJ,DKZE;
+    long long shoufu,yuegong,dkze=0,zj=0,hkze,lixi;
+    int yueshu;
     if(danjia>0&&mianji>0&&lilv>0)
     {
+        yueshu=nianshu*12;
+        ZJ=BigInt_multiply(danjia,mianji);
+        int i;
+        for(i=0;i<ZJ.size();i++)
+            zj=zj*10+ZJ[i];
+        DKZE=BigInt_multiply(ZJ,chengshu*100);
+        for(i=0;i<(DKZE.size()-2);i++)
+            dkze=dkze*10+DKZE[i];
+
+
     if(hkfangshi==1)//等额本息
     {
-        yueshu=nianshu*12;
-        zj=danjia*mianji;
-        dkze=zj*chengshu;
+
         shoufu=zj-dkze;
         yuegong=dkze*(lilv/1200.0)*qPow((1+lilv/1200.0),yueshu)/(qPow((1+lilv/1200.0),yueshu)-1);
         hkze=yuegong*yueshu;
         lixi=hkze-dkze;
-        line31->setText(QString::number((int)shoufu));
-        line32->setText(QString::number((int)yuegong));
-        line33->setText(QString::number((int)dkze));
-        line34->setText(QString::number((int)lixi));
-        line35->setText(QString::number((int)hkze));
-        line36->setText(QString::number((int)yueshu));
+        line31->setText(QString::number((long long)shoufu));
+        line32->setText(QString::number((long long)yuegong));
+        line33->setText(QString::number((long long)dkze));
+        line34->setText(QString::number((long long)lixi));
+        line35->setText(QString::number((long long)hkze));
+        line36->setText(QString::number((long long)yueshu));
         ui->groupBoxbenxi->show();
     }
     else if(hkfangshi==2)//等额本金
     {
-        yueshu=nianshu*12;
-        zj=danjia*mianji;
-        dkze=zj*chengshu;
+//        yueshu=nianshu*12;
+//        zj=danjia*mianji;
+//        dkze=zj*chengshu;
         shoufu=zj-dkze;
         lixi=(yueshu+1)*dkze*(lilv/2400.0);
         hkze=lixi+dkze;
-        float i=yueshu;
         float ciyue,chae;
-        yuegong=dkze/i+dkze*lilv/1200.0;
-        ciyue=dkze/i+(dkze-dkze/i)*lilv/1200.0;
+        yuegong=dkze/yueshu+dkze*lilv/1200.0;
+        ciyue=dkze/yueshu+(dkze-dkze/yueshu)*lilv/1200.0;
         chae=yuegong-ciyue;
-        ui->lineEdit41->setText(QString::number((int)shoufu));
-        ui->lineEdit42->setText(QString::number((int)yuegong));
-        ui->lineEdit43->setText(QString::number((int)chae));
-        ui->lineEdit44->setText(QString::number((int)dkze));
-        ui->lineEdit45->setText(QString::number((int)lixi));
-        ui->lineEdit46->setText(QString::number((int)hkze));
-        ui->lineEdit47->setText(QString::number((int)yueshu));
+        ui->lineEdit41->setText(QString::number((long long)shoufu));
+        ui->lineEdit42->setText(QString::number((long long)yuegong));
+        ui->lineEdit43->setText(QString::number((long long)chae));
+        ui->lineEdit44->setText(QString::number((long long)dkze));
+        ui->lineEdit45->setText(QString::number((long long)lixi));
+        ui->lineEdit46->setText(QString::number((long long)hkze));
+        ui->lineEdit47->setText(QString::number((long long)yueshu));
         ui->groupBoxbenjin->show();
 
     }
@@ -217,6 +250,7 @@ void ui1::jisuan(double chengshu,int nianshu,int danjia,int mianji,double lilv,i
         error.exec();
 }
 
+//混合贷款算法
 void ui1::jisuan2(float nianshu,float sdje,float sdll,float gjjje,float gjjll,int hkfangshi)
 {
     float zdk=sdje+gjjje;

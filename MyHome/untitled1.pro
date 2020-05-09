@@ -25,19 +25,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         error.cpp \
+        qingccc.cpp \
         sorry.cpp \
         ui1.cpp \
         welcome1.cpp \
         widget.cpp
 
 HEADERS  += widget.h \
+    BigInt_multiply.h \
     error.h \
+    qingccc.h \
     sorry.h \
     ui1.h \
     welcome1.h
 
 FORMS    += widget.ui \
     error.ui \
+    qingccc.ui \
     sorry.ui \
     ui1.ui \
     welcome1.ui

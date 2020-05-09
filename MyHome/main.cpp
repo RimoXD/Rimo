@@ -1,9 +1,7 @@
 #include "widget.h"
-
 #include <QApplication>
 #include <QTime>
 #include "welcome1.h"
-
 
 int main(int argc, char *argv[])
 {

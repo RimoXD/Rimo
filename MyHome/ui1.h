@@ -7,6 +7,7 @@
 #include <QPushButton>
 #include <QRadioButton>
 #include "error.h"
+#include "qingccc.h"
 
 namespace Ui {
 class ui1;
@@ -29,7 +30,6 @@ public:
     int hkfangshi2=1;
     void jisuan2(float nianshu,float sdje,float sdll,float gjjje,float gjjll,int hkfangshi=1);
 
-
     //转化数据
     float Leibie();
     float Fangshi();
@@ -46,6 +46,7 @@ signals:
 private:
     Ui::ui1 *ui;
     Error error;
+    Qingccc woyao;
     QComboBox *cb1,*cb2,*cb3,*cb4,*cb21,*cb22;
     QLineEdit *line1,*line2,*line3,*line21,*line22,*line23,*line24;
     QLineEdit *line31,*line32,*line33,*line34,*line35,*line36;

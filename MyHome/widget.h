@@ -22,9 +22,10 @@ public:
 private:
     Ui::Widget *ui;
 
-    //建立5个分功能窗口
+    //建立分功能窗口
     ui1 ui1;
     Sorry sorry;
+
     int i=1;//进入窗口条件
 
 };

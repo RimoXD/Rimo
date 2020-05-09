@@ -12,8 +12,8 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
     setWindowTitle("MyHome");
     setFixedSize(328,394);
-    ui->groupBox->setStyleSheet("QGroupBox{border:none}");
 
+    ui->groupBox->setStyleSheet("QGroupBox{border:none}");
 
     //分窗口入口
     connect(ui->radioButton_1,&QRadioButton::clicked,[=](){
@@ -49,7 +49,7 @@ void Widget::setbuild(int i)
 {
     switch (i)
     {
-        case 1:ui1.show();this->hide();break;
+        case 1:this->hide();ui1.show();break;
         case 2:
         case 3:
         case 4:
