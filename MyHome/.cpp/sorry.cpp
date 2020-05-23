@@ -1,4 +1,4 @@
-#include "sorry.h"
+#include ".h/sorry.h"
 #include "ui_sorry.h"
 
 Sorry::Sorry(QWidget *parent) :

@@ -1,12 +1,12 @@
-#include "ui1.h"
+#include ".h/ui1.h"
 #include "ui_ui1.h"
-#include "error.h"
+#include ".h/error.h"
 #include <QPushButton>
 #include <QDebug>
 #include <QString>
 #include <QRegExp>
 #include <qmath.h>
-#include "BigInt_multiply.h"
+#include ".h/BigInt_multiply.h"
 
 ui1::ui1(QWidget *parent) :
     QWidget(parent),

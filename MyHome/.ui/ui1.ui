@@ -726,7 +726,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="res.qrc">:/new/prefix1/image/zzpic14836.jpg</pixmap>
+    <pixmap resource="../res.qrc">:/new/prefix1/image/zzpic14836.jpg</pixmap>
    </property>
   </widget>
   <widget class="QGroupBox" name="groupBoxhunhebenjin">
@@ -1871,7 +1871,7 @@
   <zorder>groupBoxshangye</zorder>
  </widget>
  <resources>
-  <include location="res.qrc"/>
+  <include location="../res.qrc"/>
  </resources>
  <connections/>
 </ui>

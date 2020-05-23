@@ -26,12 +26,12 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="res.qrc">:/new/prefix1/image/无标题.jpg</pixmap>
+    <pixmap resource="../res.qrc">:/new/prefix1/image/无标题.jpg</pixmap>
    </property>
   </widget>
  </widget>
  <resources>
-  <include location="res.qrc"/>
+  <include location="../res.qrc"/>
  </resources>
  <connections/>
 </ui>

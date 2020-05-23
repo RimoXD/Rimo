@@ -23,28 +23,28 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 
-SOURCES += main.cpp\
-        error.cpp \
-        qingccc.cpp \
-        sorry.cpp \
-        ui1.cpp \
-        welcome1.cpp \
-        widget.cpp
+SOURCES += .cpp/main.cpp\
+        .cpp/error.cpp \
+        .cpp/qingccc.cpp \
+        .cpp/sorry.cpp \
+        .cpp/ui1.cpp \
+        .cpp/welcome1.cpp \
+        .cpp/widget.cpp
 
-HEADERS  += widget.h \
-    BigInt_multiply.h \
-    error.h \
-    qingccc.h \
-    sorry.h \
-    ui1.h \
-    welcome1.h
+HEADERS  += .h/widget.h \
+    .h/BigInt_multiply.h \
+    .h/error.h \
+    .h/qingccc.h \
+    .h/sorry.h \
+    .h/ui1.h \
+    .h/welcome1.h
 
-FORMS    += widget.ui \
-    error.ui \
-    qingccc.ui \
-    sorry.ui \
-    ui1.ui \
-    welcome1.ui
+FORMS    += .ui/widget.ui \
+    .ui/error.ui \
+    .ui/qingccc.ui \
+    .ui/sorry.ui \
+    .ui/ui1.ui \
+    .ui/welcome1.ui
 
 RESOURCES += \
     res.qrc

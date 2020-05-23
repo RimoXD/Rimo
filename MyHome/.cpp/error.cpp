@@ -1,4 +1,4 @@
-#include "error.h"
+#include ".h/error.h"
 #include "ui_error.h"
 
 Error::Error(QWidget *parent) :

@@ -1,4 +1,4 @@
-#include "welcome1.h"
+#include ".h/welcome1.h"
 #include "ui_welcome1.h"
 #include <QTime>
 

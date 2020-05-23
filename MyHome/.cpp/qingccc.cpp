@@ -1,4 +1,4 @@
-#include "qingccc.h"
+#include ".h/qingccc.h"
 #include "ui_qingccc.h"
 Qingccc::Qingccc(QWidget *parent) :
     QDialog(parent),
