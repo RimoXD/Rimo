@@ -34,6 +34,7 @@ ui1::ui1(QWidget *parent) :
             ui->comboBox_21->setCurrentIndex(leibie);
             ui->groupBoxshangye->hide();
             ui->groupBoxhunhe->show();
+            Qingchu();
         }
     });
     connect(ui->comboBox_21, QOverload<int>::of(&QComboBox::currentIndexChanged),
@@ -44,6 +45,7 @@ ui1::ui1(QWidget *parent) :
             ui->comboBox->setCurrentIndex(leibie);
             ui->groupBoxhunhe->hide();
             ui->groupBoxshangye->show();
+            Qingchu();
         }
     });
     }
@@ -57,7 +59,6 @@ ui1::ui1(QWidget *parent) :
     cb21=ui->comboBox_21;
     cb22=ui->comboBox_22;
     }
-
     //行输入
     {
     line1=ui->lineEdit;
@@ -189,8 +190,6 @@ ui1::~ui1()
 //商代和公积金贷款算法
 void ui1::jisuan(double chengshu,int nianshu,int danjia,int mianji,double lilv,int hkfangshi)
 {
-
-    qDebug()<<mianji;
 
 //    long long shoufu,yuegong,dkze,zj,hkze,yueshu,lixi;
     QVector<int> ZJ,DKZE;
