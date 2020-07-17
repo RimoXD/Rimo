@@ -1,0 +1,16 @@
+Determining if the C compiler works failed with the following output:
+Change Dir: C:/Users/Rimo/Code/程序设计/apple2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/mingw64/bin/mingw32-make.exe cmTC_6433f/fast && C:/MinGW/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_6433f.dir\build.make CMakeFiles/cmTC_6433f.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Rimo/Code/程序设计/apple2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6433f.dir/testCCompiler.c.obj
+C:\MinGW\mingw64\bin\gcc.exe    -o CMakeFiles\cmTC_6433f.dir\testCCompiler.c.obj   -c C:\Users\Rimo\Code\绋嬪簭璁捐\apple2\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+gcc.exe: error: C:\Users\Rimo\Code\绋嬪簭璁捐\apple2\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c: No such file or directory
+gcc.exe: fatal error: no input files
+compilation terminated.
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_6433f.dir\build.make:65: CMakeFiles/cmTC_6433f.dir/testCCompiler.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Rimo/Code/程序设计/apple2/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:120: cmTC_6433f/fast] Error 2
+
+
+

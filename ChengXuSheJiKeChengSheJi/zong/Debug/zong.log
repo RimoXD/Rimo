@@ -1,0 +1,3 @@
+﻿  zong.cpp
+C:\Users\Rimo\Code\zong\zong.cpp(80,35): warning C4018: “<”: 有符号/无符号不匹配
+  zong.vcxproj -> C:\Users\Rimo\Code\zong\Debug\zong.exe

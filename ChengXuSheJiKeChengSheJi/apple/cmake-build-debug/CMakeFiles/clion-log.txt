@@ -1,0 +1,39 @@
+"C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Rimo\Code\程序设计\apple
+-- The C compiler identification is GNU 8.1.0
+-- The CXX compiler identification is GNU 8.1.0
+-- Check for working C compiler: C:/MinGW/mingw64/bin/gcc.exe
+-- Check for working C compiler: C:/MinGW/mingw64/bin/gcc.exe -- broken
+CMake Error at C:/Program Files/JetBrains/CLion 2019.3.4/bin/cmake/win/share/cmake-3.15/Modules/CMakeTestCCompiler.cmake:60 (message):
+  The C compiler
+
+    "C:/MinGW/mingw64/bin/gcc.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: C:/Users/Rimo/Code/绋嬪簭璁捐/apple/cmake-build-debug/CMakeFiles/CMakeTmp
+    
+    Run Build Command(s):C:/MinGW/mingw64/bin/mingw32-make.exe cmTC_bf26d/fast && C:/MinGW/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_bf26d.dir\build.make CMakeFiles/cmTC_bf26d.dir/build
+    mingw32-make.exe[1]: Entering directory 'C:/Users/Rimo/Code/绋嬪簭璁捐/apple/cmake-build-debug/CMakeFiles/CMakeTmp'
+    Building C object CMakeFiles/cmTC_bf26d.dir/testCCompiler.c.obj
+    C:\MinGW\mingw64\bin\gcc.exe    -o CMakeFiles\cmTC_bf26d.dir\testCCompiler.c.obj   -c C:\Users\Rimo\Code\缁嬪绨拋鎹愵吀\apple\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+    gcc.exe: error: C:\Users\Rimo\Code\缁嬪绨拋鎹愵吀\apple\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c: No such file or directory
+    gcc.exe: fatal error: no input files
+    compilation terminated.
+    mingw32-make.exe[1]: *** [CMakeFiles\cmTC_bf26d.dir\build.make:65: CMakeFiles/cmTC_bf26d.dir/testCCompiler.c.obj] Error 1
+    mingw32-make.exe[1]: Leaving directory 'C:/Users/Rimo/Code/绋嬪簭璁捐/apple/cmake-build-debug/CMakeFiles/CMakeTmp'
+    mingw32-make.exe: *** [Makefile:120: cmTC_bf26d/fast] Error 2
+    
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/Rimo/Code/绋嬪簭璁捐/apple/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "C:/Users/Rimo/Code/绋嬪簭璁捐/apple/cmake-build-debug/CMakeFiles/CMakeError.log".
